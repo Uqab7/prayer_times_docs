@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="ar" dir="rtl">
   <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <title>سياسة الخصوصية | مواقيت الصلاة</title>
+
     <style>
       :root {
         color-scheme: light dark;
@@ -16,6 +18,7 @@
         --soft: #e4f3e9;
         --border: #d9e1db;
       }
+
       @media (prefers-color-scheme: dark) {
         :root {
           --bg: #101512;
@@ -27,9 +30,11 @@
           --border: #34463a;
         }
       }
+
       * {
         box-sizing: border-box;
       }
+
       body {
         margin: 0;
         background: var(--bg);
@@ -37,10 +42,12 @@
         font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
         line-height: 1.9;
       }
+
       main {
         width: min(900px, calc(100% - 28px));
         margin: 32px auto;
       }
+
       header,
       .card {
         background: var(--card);
@@ -49,63 +56,166 @@
         padding: clamp(20px, 4vw, 38px);
         margin-bottom: 18px;
       }
+
       header {
         background: linear-gradient(135deg, var(--soft), var(--card));
+        position: relative;
       }
+
       h1 {
         margin: 0 0 8px;
         color: var(--accent);
         font-size: clamp(1.8rem, 5vw, 2.6rem);
       }
+
       h2 {
         margin: 0 0 10px;
         font-size: 1.25rem;
         color: var(--accent);
       }
+
       p,
       li {
         font-size: 1rem;
       }
+
       ul {
-        padding-right: 24px;
+        padding-inline-start: 24px;
       }
+
       .meta,
       .note {
         color: var(--muted);
       }
+
       .notice {
-        border-right: 4px solid var(--accent);
+        border-inline-start: 4px solid var(--accent);
         background: var(--soft);
         padding: 14px 16px;
         border-radius: 12px;
       }
+
       a {
         color: var(--accent);
         font-weight: 700;
       }
+
       footer {
         text-align: center;
         color: var(--muted);
         padding: 10px 0 30px;
       }
+
+      /* Language selector */
+      .language-selector {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      }
+
+      .language-selector select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: var(--card);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px 40px 10px 14px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        cursor: pointer;
+
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+          linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+        background-position:
+          calc(100% - 18px) 50%,
+          calc(100% - 12px) 50%;
+        background-size:
+          6px 6px,
+          6px 6px;
+        background-repeat: no-repeat;
+      }
+
+      html[dir="rtl"] .language-selector {
+        justify-content: flex-start;
+      }
+
+      html[dir="rtl"] .language-selector select {
+        padding: 10px 14px 10px 40px;
+
+        background-position:
+          12px 50%,
+          18px 50%;
+      }
+
+      html[dir="ltr"] .language-selector {
+        justify-content: flex-end;
+      }
+
+      .language-selector select:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
     </style>
   </head>
+
   <body>
     <main>
+
+      <!-- Language Selector -->
+      <div class="language-selector">
+        <select id="languageSelector" aria-label="Language">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <!-- Header -->
       <header>
-        <h1>سياسة الخصوصية</h1>
-        <p>تطبيق «مواقيت الصلاة»</p>
-        <p class="meta">تاريخ السريان وآخر تحديث: 19 أغسطس 2026</p>
+        <h1 data-ar="سياسة الخصوصية" data-en="Privacy Policy">
+          سياسة الخصوصية
+        </h1>
+
+        <p
+          data-ar="تطبيق «مواقيت الصلاة»"
+          data-en="Prayer Times App"
+        >
+          تطبيق «مواقيت الصلاة»
+        </p>
+
+        <p
+          class="meta"
+          data-ar="تاريخ السريان وآخر تحديث: 19 أغسطس 2026"
+          data-en="Effective Date and Last Updated: August 19, 2026"
+        >
+          تاريخ السريان وآخر تحديث: 19 أغسطس 2026
+        </p>
       </header>
 
+      <!-- 1 -->
       <section class="card">
-        <h2>1. مقدمة</h2>
-        <p>
+        <h2
+          data-ar="1. مقدمة"
+          data-en="1. Introduction"
+        >
+          1. مقدمة
+        </h2>
+
+        <p
+          data-ar="نحترم خصوصيتك ونلتزم بتوضيح طريقة تعامل التطبيق مع المعلومات. تشرح هذه السياسة البيانات اللازمة لعمل ميزات التطبيق، وكيفية حفظها، وخياراتك بشأنها."
+          data-en="We respect your privacy and are committed to explaining how the app handles information. This policy describes the data required for the app's features, how it is stored, and the choices available to you."
+        >
           نحترم خصوصيتك ونلتزم بتوضيح طريقة تعامل التطبيق مع المعلومات. تشرح هذه
           السياسة البيانات اللازمة لعمل ميزات التطبيق، وكيفية حفظها، وخياراتك
           بشأنها.
         </p>
-        <p class="notice">
+
+        <p
+          class="notice"
+          data-ar="<strong>الخلاصة:</strong> يُستخدم موقعك الدقيق لحساب مواقيت الصلاة واتجاه القبلة، ويُحفظ محليًا على جهازك. لا يستطيع المطور الاطلاع عليه ولا يرسله التطبيق إلى جهات خارجية. ومع ذلك، يعرض التطبيق إعلانات عبر Google AdMob، والتي قد تعالج بيانات إعلانية مستقلة كما هو موضح أدناه."
+          data-en="<strong>Summary:</strong> Your precise location is used to calculate prayer times and the Qibla direction and is stored locally on your device. The developer cannot access it, and the app does not send it to third parties. However, the app displays advertisements through Google AdMob, which may process separate advertising-related data as described below."
+        >
           <strong>الخلاصة:</strong> يُستخدم موقعك الدقيق لحساب مواقيت الصلاة
           واتجاه القبلة، ويُحفظ محليًا على جهازك. لا يستطيع المطور الاطلاع عليه
           ولا يرسله التطبيق إلى جهات خارجية. ومع ذلك، يعرض التطبيق إعلانات عبر
@@ -113,26 +223,52 @@
         </p>
       </section>
 
+      <!-- 2 -->
       <section class="card">
-        <h2>2. بيانات الموقع</h2>
+        <h2
+          data-ar="2. بيانات الموقع"
+          data-en="2. Location Data"
+        >
+          2. بيانات الموقع
+        </h2>
+
         <ul>
-          <li>
+          <li
+            data-ar="<strong>البيانات المطلوبة:</strong> الموقع الجغرافي الدقيق للجهاز، بعد منحك الإذن."
+            data-en="<strong>Data Required:</strong> The device's precise geographic location after you grant permission."
+          >
             <strong>البيانات المطلوبة:</strong> الموقع الجغرافي الدقيق للجهاز،
             بعد منحك الإذن.
           </li>
-          <li>
+
+          <li
+            data-ar="<strong>الغرض:</strong> حساب مواقيت الصلاة المناسبة لموقعك وتحديد اتجاه القبلة والمسافة إلى الكعبة."
+            data-en="<strong>Purpose:</strong> To calculate prayer times appropriate for your location and determine the Qibla direction and distance to the Kaaba."
+          >
             <strong>الغرض:</strong> حساب مواقيت الصلاة المناسبة لموقعك وتحديد
             اتجاه القبلة والمسافة إلى الكعبة.
           </li>
-          <li>
+
+          <li
+            data-ar="<strong>طريقة التخزين:</strong> تُحفظ بيانات الموقع والنتائج المرتبطة بها محليًا على جهازك."
+            data-en="<strong>Storage:</strong> Location data and the results associated with it are stored locally on your device."
+          >
             <strong>طريقة التخزين:</strong> تُحفظ بيانات الموقع والنتائج
             المرتبطة بها محليًا على جهازك.
           </li>
-          <li>
+
+          <li
+            data-ar="<strong>الوصول والمشاركة:</strong> لا يملك المطور وصولًا إلى موقعك المحفوظ، ولا يشارك التطبيق موقعك الدقيق مع أي جهة خارجية."
+            data-en="<strong>Access and Sharing:</strong> The developer does not have access to your stored location, and the app does not share your precise location with any third party."
+          >
             <strong>الوصول والمشاركة:</strong> لا يملك المطور وصولًا إلى موقعك
             المحفوظ، ولا يشارك التطبيق موقعك الدقيق مع أي جهة خارجية.
           </li>
-          <li>
+
+          <li
+            data-ar="<strong>التحكم بالإذن:</strong> يمكنك رفض إذن الموقع أو سحبه من إعدادات نظام التشغيل، لكن ميزات المواقيت والقبلة قد لا تعمل بدقة أو قد تتوقف."
+            data-en="<strong>Permission Control:</strong> You can deny or revoke location permission from your operating system settings, but the prayer times and Qibla features may not work accurately or may stop functioning."
+          >
             <strong>التحكم بالإذن:</strong> يمكنك رفض إذن الموقع أو سحبه من
             إعدادات نظام التشغيل، لكن ميزات المواقيت والقبلة قد لا تعمل بدقة أو
             قد تتوقف.
@@ -140,67 +276,122 @@
         </ul>
       </section>
 
+      <!-- 3 -->
       <section class="card">
-        <h2>3. التخزين المحلي وحذف البيانات</h2>
-        <p>
+        <h2
+          data-ar="3. التخزين المحلي وحذف البيانات"
+          data-en="3. Local Storage and Data Deletion"
+        >
+          3. التخزين المحلي وحذف البيانات
+        </h2>
+
+        <p
+          data-ar="تُخزن إعدادات التطبيق وبيانات الموقع اللازمة للتشغيل على جهازك. يمكنك حذف بيانات الموقع من داخل التطبيق عبر <strong>الإعدادات ← الموقع والخصوصية ← حذف بيانات الموقع</strong>. يؤدي ذلك إلى إزالة بيانات الموقع المحلية، وقد يتطلب استخدام ميزات الصلاة والقبلة منح الإذن وتحديد الموقع من جديد."
+          data-en="The app's settings and the location data required for its operation are stored on your device. You can delete your location data from within the app by going to <strong>Settings → Location & Privacy → Delete Location Data</strong>. This removes the locally stored location data, and using the prayer and Qibla features may require you to grant permission and determine your location again."
+        >
           تُخزن إعدادات التطبيق وبيانات الموقع اللازمة للتشغيل على جهازك. يمكنك
           حذف بيانات الموقع من داخل التطبيق عبر
           <strong>الإعدادات ← الموقع والخصوصية ← حذف بيانات الموقع</strong>.
           يؤدي ذلك إلى إزالة بيانات الموقع المحلية، وقد يتطلب استخدام ميزات
           الصلاة والقبلة منح الإذن وتحديد الموقع من جديد.
         </p>
-        <p>
+
+        <p
+          data-ar="يمكنك كذلك حذف بيانات التطبيق كاملة من إعدادات نظام التشغيل أو بإزالة التطبيق من الجهاز، وفق طريقة تعامل نظام التشغيل مع النسخ الاحتياطية."
+          data-en="You can also delete all app data from your operating system settings or by uninstalling the app from your device, depending on how your operating system handles backups."
+        >
           يمكنك كذلك حذف بيانات التطبيق كاملة من إعدادات نظام التشغيل أو بإزالة
           التطبيق من الجهاز، وفق طريقة تعامل نظام التشغيل مع النسخ الاحتياطية.
         </p>
       </section>
 
+      <!-- 4 -->
       <section class="card">
-        <h2>4. الإعلانات وخدمة Google AdMob</h2>
-        <p>
+        <h2
+          data-ar="4. الإعلانات وخدمة Google AdMob"
+          data-en="4. Advertising and Google AdMob"
+        >
+          4. الإعلانات وخدمة Google AdMob
+        </h2>
+
+        <p
+          data-ar="يستخدم التطبيق خدمة Google AdMob لعرض الإعلانات. تعمل Google كمزود خدمة مستقل وقد تجمع أو تعالج بيانات مثل معرّفات الجهاز والإعلانات، وعنوان IP، ومعلومات الجهاز، وبيانات الأعطال والأداء، والتفاعل مع الإعلانات، وقد تستنتج موقعًا تقريبيًا من عنوان IP. يعتمد نوع المعالجة على إعدادات الجهاز والمنطقة وخيارات الموافقة ونوع الإعلانات المعروضة."
+          data-en="The app uses Google AdMob to display advertisements. Google acts as an independent service provider and may collect or process data such as device and advertising identifiers, IP address, device information, crash and performance data, and interactions with advertisements. Google may also infer an approximate location from an IP address. The type of processing depends on your device settings, region, consent choices, and the type of advertisements displayed."
+        >
           يستخدم التطبيق خدمة Google AdMob لعرض الإعلانات. تعمل Google كمزود
           خدمة مستقل وقد تجمع أو تعالج بيانات مثل معرّفات الجهاز والإعلانات،
           وعنوان IP، ومعلومات الجهاز، وبيانات الأعطال والأداء، والتفاعل مع
           الإعلانات، وقد تستنتج موقعًا تقريبيًا من عنوان IP. يعتمد نوع المعالجة
           على إعدادات الجهاز والمنطقة وخيارات الموافقة ونوع الإعلانات المعروضة.
         </p>
-        <p>
+
+        <p
+          data-ar="<strong>لا يرسل التطبيق موقعك الدقيق المخزن محليًا إلى AdMob.</strong> ولا تعني البيانات التي تعالجها AdMob أن المطور يستطيع الاطلاع على موقعك الدقيق أو بياناتك الشخصية المحلية."
+          data-en="<strong>The app does not send your precise, locally stored location to AdMob.</strong> The data processed by AdMob does not mean that the developer can access your precise location or your locally stored personal data."
+        >
           <strong>لا يرسل التطبيق موقعك الدقيق المخزن محليًا إلى AdMob.</strong>
           ولا تعني البيانات التي تعالجها AdMob أن المطور يستطيع الاطلاع على
           موقعك الدقيق أو بياناتك الشخصية المحلية.
         </p>
-        <p>
+
+        <p
+          data-ar='قد تستخدم Google وشركاؤها تقنيات تخزين محلي أو معرّفات إعلانية لقياس أداء الإعلانات ومنع الاحتيال وعرض إعلانات مخصصة أو غير مخصصة، وفق موافقتك والقانون المطبق. يمكنك معرفة المزيد من خلال <a href="https://policies.google.com/privacy" rel="noopener noreferrer">سياسة خصوصية Google</a> و<a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">سياسات Google الإعلانية</a>.'
+          data-en='Google and its partners may use local storage technologies or advertising identifiers to measure ad performance, prevent fraud, and display personalized or non-personalized advertisements, subject to your consent and applicable law. You can learn more through the <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">Google Advertising Policies</a>.'
+        >
           قد تستخدم Google وشركاؤها تقنيات تخزين محلي أو معرّفات إعلانية لقياس
           أداء الإعلانات ومنع الاحتيال وعرض إعلانات مخصصة أو غير مخصصة، وفق
           موافقتك والقانون المطبق. يمكنك معرفة المزيد من خلال
-          <a
-            href="https://policies.google.com/privacy"
-            rel="noopener noreferrer"
-            >سياسة خصوصية Google</a
-          >
+          <a href="https://policies.google.com/privacy" rel="noopener noreferrer">
+            سياسة خصوصية Google
+          </a>
           و<a
             href="https://policies.google.com/technologies/ads"
             rel="noopener noreferrer"
-            >سياسات Google الإعلانية</a
-          >.
+          >
+            سياسات Google الإعلانية
+          </a>.
         </p>
       </section>
 
+      <!-- 5 -->
       <section class="card">
-        <h2>5. الموافقة والخيارات الإعلانية</h2>
-        <p>
+        <h2
+          data-ar="5. الموافقة والخيارات الإعلانية"
+          data-en="5. Consent and Advertising Choices"
+        >
+          5. الموافقة والخيارات الإعلانية
+        </h2>
+
+        <p
+          data-ar='عندما يقتضي القانون، قد يعرض التطبيق رسالة لاختيار كيفية استخدام البيانات لأغراض الإعلانات. يمكنك أيضًا إدارة تخصيص الإعلانات أو إعادة ضبط معرّف الإعلانات من إعدادات جهازك أو من <a href="https://myadcenter.google.com/" rel="noopener noreferrer">مركز إعلانات Google</a>. سحب الموافقة لا يؤثر في قانونية المعالجة التي تمت قبل السحب.'
+          data-en='Where required by law, the app may display a consent message allowing you to choose how data may be used for advertising purposes. You can also manage ad personalization or reset your advertising ID through your device settings or the <a href="https://myadcenter.google.com/" rel="noopener noreferrer">Google Ads Center</a>. Withdrawing consent does not affect the lawfulness of processing carried out before the withdrawal.'
+        >
           عندما يقتضي القانون، قد يعرض التطبيق رسالة لاختيار كيفية استخدام
           البيانات لأغراض الإعلانات. يمكنك أيضًا إدارة تخصيص الإعلانات أو إعادة
           ضبط معرّف الإعلانات من إعدادات جهازك أو من
-          <a href="https://myadcenter.google.com/" rel="noopener noreferrer"
-            >مركز إعلانات Google</a
-          >. سحب الموافقة لا يؤثر في قانونية المعالجة التي تمت قبل السحب.
+          <a
+            href="https://myadcenter.google.com/"
+            rel="noopener noreferrer"
+          >
+            مركز إعلانات Google
+          </a>.
+          سحب الموافقة لا يؤثر في قانونية المعالجة التي تمت قبل السحب.
         </p>
       </section>
 
+      <!-- 6 -->
       <section class="card">
-        <h2>6. الاحتفاظ بالبيانات والأمان</h2>
-        <p>
+        <h2
+          data-ar="6. الاحتفاظ بالبيانات والأمان"
+          data-en="6. Data Retention and Security"
+        >
+          6. الاحتفاظ بالبيانات والأمان
+        </h2>
+
+        <p
+          data-ar="تظل بيانات الموقع التي يديرها التطبيق على جهازك إلى أن تحذفها من صفحة الإعدادات أو تحذف بيانات التطبيق. نتخذ خيارات تصميم تقلل جمع البيانات، لكن لا توجد وسيلة تخزين إلكتروني آمنة بنسبة 100%، كما يعتمد أمان البيانات المحلية جزئيًا على أمان جهازك ونظام تشغيله."
+          data-en="Location data managed by the app remains on your device until you delete it from the settings page or delete the app's data. We use design choices that minimize data collection, but no electronic storage method is 100% secure. The security of locally stored data also depends partly on the security of your device and operating system."
+        >
           تظل بيانات الموقع التي يديرها التطبيق على جهازك إلى أن تحذفها من صفحة
           الإعدادات أو تحذف بيانات التطبيق. نتخذ خيارات تصميم تقلل جمع البيانات،
           لكن لا توجد وسيلة تخزين إلكتروني آمنة بنسبة 100%، كما يعتمد أمان
@@ -208,27 +399,57 @@
         </p>
       </section>
 
+      <!-- 7 -->
       <section class="card">
-        <h2>7. خصوصية الأطفال</h2>
-        <p>
+        <h2
+          data-ar="7. خصوصية الأطفال"
+          data-en="7. Children's Privacy"
+        >
+          7. خصوصية الأطفال
+        </h2>
+
+        <p
+          data-ar="التطبيق موجه لجمهور عام وليس مصممًا خصيصًا للأطفال دون 13 عامًا. لا يجمع المطور عن قصد معلومات شخصية من الأطفال. قد تخضع الإعلانات لإعدادات العمر والمنطقة والسياسات المطبقة في Google AdMob."
+          data-en="The app is intended for a general audience and is not specifically designed for children under 13. The developer does not knowingly collect personal information from children. Advertisements may be subject to age and regional settings and the policies applicable to Google AdMob."
+        >
           التطبيق موجه لجمهور عام وليس مصممًا خصيصًا للأطفال دون 13 عامًا. لا
           يجمع المطور عن قصد معلومات شخصية من الأطفال. قد تخضع الإعلانات
           لإعدادات العمر والمنطقة والسياسات المطبقة في Google AdMob.
         </p>
       </section>
 
+      <!-- 8 -->
       <section class="card">
-        <h2>8. خدمات وروابط الجهات الخارجية</h2>
-        <p>
+        <h2
+          data-ar="8. خدمات وروابط الجهات الخارجية"
+          data-en="8. Third-Party Services and Links"
+        >
+          8. خدمات وروابط الجهات الخارجية
+        </h2>
+
+        <p
+          data-ar="قد تقود الإعلانات أو الروابط إلى مواقع أو تطبيقات خارجية لا نديرها. تخضع هذه الخدمات لسياسات الخصوصية الخاصة بها، ولا تنطبق هذه السياسة على ممارسات الجهات الخارجية."
+          data-en="Advertisements or links may lead to third-party websites or applications that we do not operate. These services are subject to their own privacy policies, and this policy does not apply to the practices of third parties."
+        >
           قد تقود الإعلانات أو الروابط إلى مواقع أو تطبيقات خارجية لا نديرها.
           تخضع هذه الخدمات لسياسات الخصوصية الخاصة بها، ولا تنطبق هذه السياسة
           على ممارسات الجهات الخارجية.
         </p>
       </section>
 
+      <!-- 9 -->
       <section class="card">
-        <h2>9. تغييرات هذه السياسة</h2>
-        <p>
+        <h2
+          data-ar="9. تغييرات هذه السياسة"
+          data-en="9. Changes to This Policy"
+        >
+          9. تغييرات هذه السياسة
+        </h2>
+
+        <p
+          data-ar="قد نحدّث هذه السياسة عند تغيير ميزات التطبيق أو المتطلبات القانونية أو الخدمات المستخدمة. سننشر النسخة المحدثة في هذه الصفحة مع تعديل تاريخ آخر تحديث، ويُعد استمرار استخدام التطبيق بعد نشر التحديث قبولًا بالسياسة المعدلة بالقدر الذي يسمح به القانون."
+          data-en="We may update this policy when the app's features, legal requirements, or services used by the app change. The updated version will be published on this page with a revised last-updated date. Continued use of the app after an update is published constitutes acceptance of the revised policy to the extent permitted by applicable law."
+        >
           قد نحدّث هذه السياسة عند تغيير ميزات التطبيق أو المتطلبات القانونية أو
           الخدمات المستخدمة. سننشر النسخة المحدثة في هذه الصفحة مع تعديل تاريخ
           آخر تحديث، ويُعد استمرار استخدام التطبيق بعد نشر التحديث قبولًا
@@ -236,18 +457,74 @@
         </p>
       </section>
 
+      <!-- 10 -->
       <section class="card">
-        <h2>10. التواصل</h2>
-        <p>
+        <h2
+          data-ar="10. التواصل"
+          data-en="10. Contact"
+        >
+          10. التواصل
+        </h2>
+
+        <p
+          data-ar='للاستفسارات أو الطلبات المتعلقة بالخصوصية، يمكنك التواصل مع المطور عبر صفحة التطبيق في متجر التطبيقات أو عبر <a href="https://adnandev.cloud" rel="noopener noreferrer">موقع المطور</a>.'
+          data-en='For privacy-related questions or requests, you can contact the developer through the app&apos;s page on the app store or through the <a href="https://adnandev.cloud" rel="noopener noreferrer">developer&apos;s website</a>.'
+        >
           للاستفسارات أو الطلبات المتعلقة بالخصوصية، يمكنك التواصل مع المطور عبر
           صفحة التطبيق في متجر التطبيقات أو عبر
-          <a href="https://adnandev.cloud" rel="noopener noreferrer"
-            >موقع المطور</a
-          >.
+          <a
+            href="https://adnandev.cloud"
+            rel="noopener noreferrer"
+          >
+            موقع المطور
+          </a>.
         </p>
       </section>
 
-      <footer>© 2026 تطبيق مواقيت الصلاة</footer>
+      <footer
+        data-ar="© 2026 تطبيق مواقيت الصلاة"
+        data-en="© 2026 Prayer Times App"
+      >
+        © 2026 تطبيق مواقيت الصلاة
+      </footer>
     </main>
+
+    <script>
+      const languageSelector = document.getElementById("languageSelector");
+
+      function setLanguage(language) {
+        const isArabic = language === "ar";
+
+        document.documentElement.lang = language;
+        document.documentElement.dir = isArabic ? "rtl" : "ltr";
+
+        document.title = isArabic
+          ? "سياسة الخصوصية | مواقيت الصلاة"
+          : "Privacy Policy | Prayer Times";
+
+        document.querySelectorAll("[data-ar][data-en]").forEach((element) => {
+          element.innerHTML = isArabic
+            ? element.dataset.ar
+            : element.dataset.en;
+        });
+
+        languageSelector.value = language;
+
+        localStorage.setItem("privacyPolicyLanguage", language);
+      }
+
+      languageSelector.addEventListener("change", (event) => {
+        setLanguage(event.target.value);
+      });
+
+      const savedLanguage = localStorage.getItem("privacyPolicyLanguage");
+
+      if (savedLanguage === "ar" || savedLanguage === "en") {
+        setLanguage(savedLanguage);
+      } else {
+        setLanguage("ar");
+      }
+    </script>
   </body>
 </html>
+```
