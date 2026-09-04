@@ -173,7 +173,10 @@
 
       <!-- Header -->
       <header>
-        <h1 data-ar="سياسة الخصوصية" data-en="Privacy Policy">
+        <h1
+          data-ar="سياسة الخصوصية"
+          data-en="Privacy Policy"
+        >
           سياسة الخصوصية
         </h1>
 
@@ -341,7 +344,10 @@
           قد تستخدم Google وشركاؤها تقنيات تخزين محلي أو معرّفات إعلانية لقياس
           أداء الإعلانات ومنع الاحتيال وعرض إعلانات مخصصة أو غير مخصصة، وفق
           موافقتك والقانون المطبق. يمكنك معرفة المزيد من خلال
-          <a href="https://policies.google.com/privacy" rel="noopener noreferrer">
+          <a
+            href="https://policies.google.com/privacy"
+            rel="noopener noreferrer"
+          >
             سياسة خصوصية Google
           </a>
           و<a
@@ -489,54 +495,62 @@
       </footer>
     </main>
 
-<script>
-  const languageSelector = document.getElementById("languageSelector");
+    <script>
+      const languageSelector =
+        document.getElementById("languageSelector");
 
-  function setLanguage(language) {
-    const isArabic = language === "ar";
+      function setLanguage(language) {
+        const isArabic = language === "ar";
 
-    document.documentElement.lang = language;
-    document.documentElement.dir = isArabic ? "rtl" : "ltr";
+        document.documentElement.lang = language;
+        document.documentElement.dir = isArabic ? "rtl" : "ltr";
 
-    document.title = isArabic
-      ? "شروط الاستخدام | مواقيت الصلاة"
-      : "Terms of Use | Prayer Times";
+        document.title = isArabic
+          ? "سياسة الخصوصية | مواقيت الصلاة"
+          : "Privacy Policy | Prayer Times";
 
-    document.querySelectorAll("[data-ar][data-en]").forEach((element) => {
-      element.innerHTML = isArabic
-        ? element.dataset.ar
-        : element.dataset.en;
-    });
+        document
+          .querySelectorAll("[data-ar][data-en]")
+          .forEach((element) => {
+            element.innerHTML = isArabic
+              ? element.dataset.ar
+              : element.dataset.en;
+          });
 
-    languageSelector.value = language;
+        languageSelector.value = language;
 
-    // حفظ اختيار المستخدم
-    localStorage.setItem("termsOfUseLanguage", language);
-  }
+        // حفظ اختيار المستخدم
+        localStorage.setItem(
+          "privacyPolicyLanguage",
+          language
+        );
+      }
 
-  languageSelector.addEventListener("change", (event) => {
-    setLanguage(event.target.value);
-  });
+      languageSelector.addEventListener("change", (event) => {
+        setLanguage(event.target.value);
+      });
 
-  // التحقق من اللغة التي اختارها المستخدم سابقًا
-  const savedLanguage = localStorage.getItem("termsOfUseLanguage");
+      // التحقق من اللغة التي اختارها المستخدم سابقًا
+      const savedLanguage =
+        localStorage.getItem("privacyPolicyLanguage");
 
-  if (savedLanguage === "ar" || savedLanguage === "en") {
-    // استخدام اختيار المستخدم المحفوظ
-    setLanguage(savedLanguage);
-  } else {
-    // لا يوجد اختيار محفوظ، نستخدم لغة الجهاز
-    const deviceLanguage = navigator.language.toLowerCase();
+      if (savedLanguage === "ar" || savedLanguage === "en") {
+        // استخدام اختيار المستخدم المحفوظ
+        setLanguage(savedLanguage);
+      } else {
+        // لا يوجد اختيار محفوظ، نستخدم لغة الجهاز
+        const deviceLanguage =
+          navigator.language.toLowerCase();
 
-    if (deviceLanguage.startsWith("ar")) {
-      // الجهاز عربي
-      setLanguage("ar");
-    } else {
-      // الإنجليزية هي الافتراضية لجميع اللغات الأخرى
-      setLanguage("en");
-    }
-  }
-</script>
+        if (deviceLanguage.startsWith("ar")) {
+          // لغة الجهاز عربية
+          setLanguage("ar");
+        } else {
+          // الإنجليزية هي اللغة الافتراضية لجميع اللغات الأخرى
+          setLanguage("en");
+        }
+      }
+    </script>
   </body>
 </html>
 ```
