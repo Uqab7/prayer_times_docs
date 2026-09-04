@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="ar" dir="rtl">
   <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <title>شروط الاستخدام | مواقيت الصلاة</title>
+
     <style>
       :root {
         color-scheme: light dark;
@@ -16,6 +18,7 @@
         --soft: #e4f3e9;
         --border: #d9e1db;
       }
+
       @media (prefers-color-scheme: dark) {
         :root {
           --bg: #101512;
@@ -27,20 +30,29 @@
           --border: #34463a;
         }
       }
+
       * {
         box-sizing: border-box;
       }
+
       body {
         margin: 0;
         background: var(--bg);
         color: var(--text);
-        font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+        font-family:
+          "Noto Sans Arabic",
+          "Segoe UI",
+          Tahoma,
+          Arial,
+          sans-serif;
         line-height: 1.9;
       }
+
       main {
         width: min(900px, calc(100% - 28px));
         margin: 32px auto;
       }
+
       header,
       .card {
         background: var(--card);
@@ -49,57 +61,174 @@
         padding: clamp(20px, 4vw, 38px);
         margin-bottom: 18px;
       }
+
       header {
         background: linear-gradient(135deg, var(--soft), var(--card));
+        position: relative;
       }
+
       h1 {
         margin: 0 0 8px;
         color: var(--accent);
         font-size: clamp(1.8rem, 5vw, 2.6rem);
       }
+
       h2 {
         margin: 0 0 10px;
         font-size: 1.25rem;
         color: var(--accent);
       }
+
       p,
       li {
         font-size: 1rem;
       }
+
       ul {
-        padding-right: 24px;
+        padding-inline-start: 24px;
       }
+
       .meta {
         color: var(--muted);
       }
+
       .notice {
-        border-right: 4px solid var(--accent);
+        border-inline-start: 4px solid var(--accent);
         background: var(--soft);
         padding: 14px 16px;
         border-radius: 12px;
       }
+
       a {
         color: var(--accent);
         font-weight: 700;
       }
+
       footer {
         text-align: center;
         color: var(--muted);
         padding: 10px 0 30px;
       }
+
+      /* Language selector */
+      .language-selector {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      }
+
+      .language-selector select {
+        appearance: none;
+        -webkit-appearance: none;
+
+        background-color: var(--card);
+        color: var(--text);
+
+        border: 1px solid var(--border);
+        border-radius: 12px;
+
+        padding: 10px 40px 10px 14px;
+
+        font-size: 0.95rem;
+        font-family: inherit;
+
+        cursor: pointer;
+
+        background-image:
+          linear-gradient(
+            45deg,
+            transparent 50%,
+            var(--accent) 50%
+          ),
+          linear-gradient(
+            135deg,
+            var(--accent) 50%,
+            transparent 50%
+          );
+
+        background-position:
+          calc(100% - 18px) 50%,
+          calc(100% - 12px) 50%;
+
+        background-size:
+          6px 6px,
+          6px 6px;
+
+        background-repeat: no-repeat;
+      }
+
+      html[dir="rtl"] .language-selector {
+        justify-content: flex-start;
+      }
+
+      html[dir="rtl"] .language-selector select {
+        padding: 10px 14px 10px 40px;
+
+        background-position:
+          12px 50%,
+          18px 50%;
+      }
+
+      html[dir="ltr"] .language-selector {
+        justify-content: flex-end;
+      }
+
+      .language-selector select:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
     </style>
   </head>
+
   <body>
     <main>
+
+      <!-- Language Selector -->
+      <div class="language-selector">
+        <select id="languageSelector" aria-label="Language">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <!-- Header -->
       <header>
-        <h1>شروط الاستخدام</h1>
-        <p>تطبيق «مواقيت الصلاة»</p>
-        <p class="meta">تاريخ السريان وآخر تحديث: 19 أغسطس 2026</p>
+        <h1
+          data-ar="شروط الاستخدام"
+          data-en="Terms of Use"
+        >
+          شروط الاستخدام
+        </h1>
+
+        <p
+          data-ar="تطبيق «مواقيت الصلاة»"
+          data-en="Prayer Times App"
+        >
+          تطبيق «مواقيت الصلاة»
+        </p>
+
+        <p
+          class="meta"
+          data-ar="تاريخ السريان وآخر تحديث: 19 أغسطس 2026"
+          data-en="Effective Date and Last Updated: August 19, 2026"
+        >
+          تاريخ السريان وآخر تحديث: 19 أغسطس 2026
+        </p>
       </header>
 
+      <!-- 1. Acceptance -->
       <section class="card">
-        <h2>1. قبول الشروط</h2>
-        <p>
+        <h2
+          data-ar="1. قبول الشروط"
+          data-en="1. Acceptance of the Terms"
+        >
+          1. قبول الشروط
+        </h2>
+
+        <p
+          data-ar='باستخدامك تطبيق «مواقيت الصلاة» فإنك توافق على هذه الشروط وعلى <a href="privacy-policy.html">سياسة الخصوصية</a>. إذا لم توافق، فيرجى عدم استخدام التطبيق. قد تختلف بعض الحقوق والالتزامات وفق القوانين الإلزامية في بلدك.'
+          data-en='By using the "Prayer Times" app, you agree to these Terms of Use and to our <a href="privacy-policy.html">Privacy Policy</a>. If you do not agree, please do not use the app. Certain rights and obligations may vary depending on mandatory laws applicable in your country.'
+        >
           باستخدامك تطبيق «مواقيت الصلاة» فإنك توافق على هذه الشروط وعلى
           <a href="privacy-policy.html">سياسة الخصوصية</a>. إذا لم توافق، فيرجى
           عدم استخدام التطبيق. قد تختلف بعض الحقوق والالتزامات وفق القوانين
@@ -107,9 +236,19 @@
         </p>
       </section>
 
+      <!-- 2. App Function -->
       <section class="card">
-        <h2>2. وظيفة التطبيق</h2>
-        <p>
+        <h2
+          data-ar="2. وظيفة التطبيق"
+          data-en="2. App Functionality"
+        >
+          2. وظيفة التطبيق
+        </h2>
+
+        <p
+          data-ar="يوفر التطبيق أدوات لحساب مواقيت الصلاة وتحديد اتجاه القبلة وإدارة التنبيهات المرتبطة بها. يحتاج التطبيق إلى موقع الجهاز الدقيق لأداء هذه الوظائف بصورة ملائمة، ولا تعمل بعض الميزات أو قد تقل دقتها عند رفض إذن الموقع أو تعطيل خدماته."
+          data-en="The app provides tools for calculating prayer times, determining the Qibla direction, and managing related notifications. The app requires the device's precise location to perform these functions properly. Some features may not work or may be less accurate if location permission is denied or location services are disabled."
+        >
           يوفر التطبيق أدوات لحساب مواقيت الصلاة وتحديد اتجاه القبلة وإدارة
           التنبيهات المرتبطة بها. يحتاج التطبيق إلى موقع الجهاز الدقيق لأداء هذه
           الوظائف بصورة ملائمة، ولا تعمل بعض الميزات أو قد تقل دقتها عند رفض إذن
@@ -117,23 +256,48 @@
         </p>
       </section>
 
+      <!-- 3. Accuracy -->
       <section class="card">
-        <h2>3. دقة المواقيت واتجاه القبلة</h2>
-        <p class="notice">
+        <h2
+          data-ar="3. دقة المواقيت واتجاه القبلة"
+          data-en="3. Accuracy of Prayer Times and Qibla Direction"
+        >
+          3. دقة المواقيت واتجاه القبلة
+        </h2>
+
+        <p
+          class="notice"
+          data-ar="النتائج إرشادية ومحسوبة آليًا بناءً على الموقع وطريقة الحساب والمذهب وإعدادات الجهاز. قد تختلف عن المواقيت المعتمدة محليًا بسبب طرق الحساب أو ارتفاع المكان أو دقة المستشعر أو معايرة البوصلة أو إعدادات الوقت."
+          data-en="The results are provided for guidance and are calculated automatically based on your location, calculation method, madhab, and device settings. They may differ from officially recognized local prayer times due to differences in calculation methods, elevation, sensor accuracy, compass calibration, or time settings."
+        >
           النتائج إرشادية ومحسوبة آليًا بناءً على الموقع وطريقة الحساب والمذهب
           وإعدادات الجهاز. قد تختلف عن المواقيت المعتمدة محليًا بسبب طرق الحساب
           أو ارتفاع المكان أو دقة المستشعر أو معايرة البوصلة أو إعدادات الوقت.
         </p>
-        <p>
+
+        <p
+          data-ar="يتحمل المستخدم مسؤولية التحقق من المواقيت واتجاه القبلة من جهة محلية موثوقة، خصوصًا عند السفر أو أداء العبادات التي تتطلب دقة خاصة. لا يُعد التطبيق جهة دينية رسمية أو بديلًا عن الجهات الشرعية المحلية."
+          data-en="Users are responsible for verifying prayer times and the Qibla direction with a reliable local source, especially when traveling or performing acts of worship that require particular accuracy. The app is not an official religious authority and is not a substitute for local religious authorities."
+        >
           يتحمل المستخدم مسؤولية التحقق من المواقيت واتجاه القبلة من جهة محلية
           موثوقة، خصوصًا عند السفر أو أداء العبادات التي تتطلب دقة خاصة. لا يُعد
           التطبيق جهة دينية رسمية أو بديلًا عن الجهات الشرعية المحلية.
         </p>
       </section>
 
+      <!-- 4. Location -->
       <section class="card">
-        <h2>4. إذن الموقع والبيانات المحلية</h2>
-        <p>
+        <h2
+          data-ar="4. إذن الموقع والبيانات المحلية"
+          data-en="4. Location Permission and Local Data"
+        >
+          4. إذن الموقع والبيانات المحلية
+        </h2>
+
+        <p
+          data-ar='أنت تختار منح إذن الموقع أو رفضه ويمكنك سحبه من إعدادات الجهاز. تُحفظ بيانات الموقع التي يستخدمها التطبيق محليًا ولا يستطيع المطور الاطلاع عليها. يمكنك حذفها من <strong>الإعدادات ← الموقع والخصوصية ← حذف بيانات الموقع</strong>. لمزيد من التفاصيل، راجع سياسة الخصوصية.'
+          data-en='You may choose to grant or deny location permission and can revoke it through your device settings. Location data used by the app is stored locally and cannot be accessed by the developer. You can delete it through <strong>Settings → Location & Privacy → Delete Location Data</strong>. For more details, please refer to the Privacy Policy.'
+        >
           أنت تختار منح إذن الموقع أو رفضه ويمكنك سحبه من إعدادات الجهاز. تُحفظ
           بيانات الموقع التي يستخدمها التطبيق محليًا ولا يستطيع المطور الاطلاع
           عليها. يمكنك حذفها من
@@ -142,9 +306,19 @@
         </p>
       </section>
 
+      <!-- 5. Notifications -->
       <section class="card">
-        <h2>5. الإشعارات</h2>
-        <p>
+        <h2
+          data-ar="5. الإشعارات"
+          data-en="5. Notifications"
+        >
+          5. الإشعارات
+        </h2>
+
+        <p
+          data-ar="تعتمد إشعارات الصلاة على أذونات النظام، وإعدادات توفير الطاقة، والوقت والمنطقة الزمنية، وحالة الجهاز. لا نضمن وصول كل إشعار في موعده أو استمرار عمله في جميع الأجهزة. ينبغي ألا تعتمد على الإشعارات وحدها لتحديد موعد الصلاة."
+          data-en="Prayer notifications depend on system permissions, battery-saving settings, the time and time zone, and the device's state. We do not guarantee that every notification will be delivered on time or continue to function on all devices. You should not rely solely on notifications to determine prayer times."
+        >
           تعتمد إشعارات الصلاة على أذونات النظام، وإعدادات توفير الطاقة، والوقت
           والمنطقة الزمنية، وحالة الجهاز. لا نضمن وصول كل إشعار في موعده أو
           استمرار عمله في جميع الأجهزة. ينبغي ألا تعتمد على الإشعارات وحدها
@@ -152,9 +326,19 @@
         </p>
       </section>
 
+      <!-- 6. Advertising -->
       <section class="card">
-        <h2>6. الإعلانات</h2>
-        <p>
+        <h2
+          data-ar="6. الإعلانات"
+          data-en="6. Advertising"
+        >
+          6. الإعلانات
+        </h2>
+
+        <p
+          data-ar="يحتوي التطبيق على إعلانات مقدمة بواسطة Google AdMob. قد تختلف الإعلانات حسب المنطقة وإعدادات الموافقة، وقد يؤدي الضغط عليها إلى فتح خدمات خارجية. لا يعني ظهور إعلان أننا نوصي بالمعلن أو نضمن منتجاته أو خدماته. تخضع معالجة البيانات الإعلانية لسياسة الخصوصية وإعدادات Google ذات الصلة."
+          data-en="The app contains advertisements provided by Google AdMob. Advertisements may vary depending on your region and consent settings, and clicking an advertisement may open third-party services. The appearance of an advertisement does not mean that we endorse the advertiser or guarantee its products or services. The processing of advertising-related data is subject to Google's applicable privacy policies and settings."
+        >
           يحتوي التطبيق على إعلانات مقدمة بواسطة Google AdMob. قد تختلف
           الإعلانات حسب المنطقة وإعدادات الموافقة، وقد يؤدي الضغط عليها إلى فتح
           خدمات خارجية. لا يعني ظهور إعلان أننا نوصي بالمعلن أو نضمن منتجاته أو
@@ -163,45 +347,105 @@
         </p>
       </section>
 
+      <!-- 7. Acceptable Use -->
       <section class="card">
-        <h2>7. الاستخدام المقبول</h2>
-        <p>
+        <h2
+          data-ar="7. الاستخدام المقبول"
+          data-en="7. Acceptable Use"
+        >
+          7. الاستخدام المقبول
+        </h2>
+
+        <p
+          data-ar="توافق على استخدام التطبيق بصورة قانونية وشخصية، وألا تقوم بما يلي:"
+          data-en="You agree to use the app lawfully and for personal purposes, and you agree not to:"
+        >
           توافق على استخدام التطبيق بصورة قانونية وشخصية، وألا تقوم بما يلي:
         </p>
+
         <ul>
-          <li>
+          <li
+            data-ar="محاولة تعطيل التطبيق أو تجاوز وسائل الحماية أو إساءة استخدام خدماته."
+            data-en="Attempt to disable the app, bypass security measures, or misuse its services."
+          >
             محاولة تعطيل التطبيق أو تجاوز وسائل الحماية أو إساءة استخدام خدماته.
           </li>
-          <li>استخدام التطبيق أو محتواه في نشاط غير قانوني أو ضار.</li>
-          <li>
+
+          <li
+            data-ar="استخدام التطبيق أو محتواه في نشاط غير قانوني أو ضار."
+            data-en="Use the app or its content for any illegal or harmful activity."
+          >
+            استخدام التطبيق أو محتواه في نشاط غير قانوني أو ضار.
+          </li>
+
+          <li
+            data-ar="نسخ التطبيق أو تعديله أو إعادة توزيعه بما يخالف القانون أو تراخيص مكوناته."
+            data-en="Copy, modify, or redistribute the app in violation of applicable law or the licenses of its components."
+          >
             نسخ التطبيق أو تعديله أو إعادة توزيعه بما يخالف القانون أو تراخيص
             مكوناته.
           </li>
-          <li>استخدام وسائل آلية تؤثر في تشغيل التطبيق أو الإعلانات.</li>
+
+          <li
+            data-ar="استخدام وسائل آلية تؤثر في تشغيل التطبيق أو الإعلانات."
+            data-en="Use automated means that interfere with the operation of the app or its advertisements."
+          >
+            استخدام وسائل آلية تؤثر في تشغيل التطبيق أو الإعلانات.
+          </li>
         </ul>
       </section>
 
+      <!-- 8. Intellectual Property -->
       <section class="card">
-        <h2>8. الملكية الفكرية والمصادر المفتوحة</h2>
-        <p>
+        <h2
+          data-ar="8. الملكية الفكرية والمصادر المفتوحة"
+          data-en="8. Intellectual Property and Open Source"
+        >
+          8. الملكية الفكرية والمصادر المفتوحة
+        </h2>
+
+        <p
+          data-ar="تظل حقوق التطبيق وتصميمه ومحتواه محفوظة لأصحابها، باستثناء المكونات والمكتبات مفتوحة المصدر التي تخضع لتراخيصها الخاصة. يمكن الاطلاع على تراخيص تلك المكتبات من صفحة «حول التطبيق» داخل التطبيق."
+          data-en="All rights to the app, its design, and its content remain with their respective owners, except for open-source components and libraries, which are subject to their respective licenses. You can view the licenses of these libraries on the 'About the App' page within the app."
+        >
           تظل حقوق التطبيق وتصميمه ومحتواه محفوظة لأصحابها، باستثناء المكونات
           والمكتبات مفتوحة المصدر التي تخضع لتراخيصها الخاصة. يمكن الاطلاع على
           تراخيص تلك المكتبات من صفحة «حول التطبيق» داخل التطبيق.
         </p>
       </section>
 
+      <!-- 9. Availability -->
       <section class="card">
-        <h2>9. توفر التطبيق والتحديثات</h2>
-        <p>
+        <h2
+          data-ar="9. توفر التطبيق والتحديثات"
+          data-en="9. App Availability and Updates"
+        >
+          9. توفر التطبيق والتحديثات
+        </h2>
+
+        <p
+          data-ar="قد نغيّر الميزات أو نحدّثها أو نوقف بعضها، بصورة مؤقتة أو دائمة، لتحسين التطبيق أو لأسباب تقنية أو قانونية. لا نضمن أن يعمل التطبيق دون انقطاع أو أخطاء على كل الأجهزة أو إصدارات أنظمة التشغيل."
+          data-en="We may change, update, or discontinue certain features, temporarily or permanently, to improve the app or for technical or legal reasons. We do not guarantee that the app will operate without interruptions or errors on all devices or operating system versions."
+        >
           قد نغيّر الميزات أو نحدّثها أو نوقف بعضها، بصورة مؤقتة أو دائمة،
           لتحسين التطبيق أو لأسباب تقنية أو قانونية. لا نضمن أن يعمل التطبيق دون
           انقطاع أو أخطاء على كل الأجهزة أو إصدارات أنظمة التشغيل.
         </p>
       </section>
 
+      <!-- 10. Disclaimer -->
       <section class="card">
-        <h2>10. إخلاء المسؤولية وتحديدها</h2>
-        <p>
+        <h2
+          data-ar="10. إخلاء المسؤولية وتحديدها"
+          data-en="10. Disclaimer and Limitation of Liability"
+        >
+          10. إخلاء المسؤولية وتحديدها
+        </h2>
+
+        <p
+          data-ar="يُقدم التطبيق «كما هو» و«حسب التوفر» إلى أقصى حد يسمح به القانون. لا نقدم ضمانًا مطلقًا بشأن الدقة أو الملاءمة أو الاستمرارية. وإلى أقصى حد يسمح به القانون، لا يتحمل المطور مسؤولية الأضرار غير المباشرة أو فقد البيانات أو تفويت الإشعارات أو القرارات المبنية حصريًا على نتائج التطبيق. لا تستبعد هذه الشروط أي مسؤولية لا يجوز استبعادها قانونًا."
+          data-en="The app is provided 'as is' and 'as available' to the maximum extent permitted by law. We make no absolute guarantee regarding its accuracy, suitability, or continuity. To the maximum extent permitted by law, the developer shall not be liable for indirect damages, data loss, missed notifications, or decisions made solely based on the results provided by the app. Nothing in these Terms excludes any liability that cannot legally be excluded."
+        >
           يُقدم التطبيق «كما هو» و«حسب التوفر» إلى أقصى حد يسمح به القانون. لا
           نقدم ضمانًا مطلقًا بشأن الدقة أو الملاءمة أو الاستمرارية. وإلى أقصى حد
           يسمح به القانون، لا يتحمل المطور مسؤولية الأضرار غير المباشرة أو فقد
@@ -210,9 +454,19 @@
         </p>
       </section>
 
+      <!-- 11. Changes -->
       <section class="card">
-        <h2>11. التغييرات على الشروط</h2>
-        <p>
+        <h2
+          data-ar="11. التغييرات على الشروط"
+          data-en="11. Changes to These Terms"
+        >
+          11. التغييرات على الشروط
+        </h2>
+
+        <p
+          data-ar="قد نحدّث هذه الشروط عند تغيير التطبيق أو القوانين أو الخدمات المستخدمة. تُنشر النسخة الجديدة في هذه الصفحة مع تاريخ التحديث. استمرار استخدام التطبيق بعد سريان التعديل يعني قبول الشروط المعدلة بالقدر الذي يسمح به القانون."
+          data-en="We may update these Terms when the app, applicable laws, or services used by the app change. The updated version will be published on this page with a revised update date. Continued use of the app after the changes take effect constitutes acceptance of the revised Terms to the extent permitted by applicable law."
+        >
           قد نحدّث هذه الشروط عند تغيير التطبيق أو القوانين أو الخدمات
           المستخدمة. تُنشر النسخة الجديدة في هذه الصفحة مع تاريخ التحديث.
           استمرار استخدام التطبيق بعد سريان التعديل يعني قبول الشروط المعدلة
@@ -220,18 +474,87 @@
         </p>
       </section>
 
+      <!-- 12. Contact -->
       <section class="card">
-        <h2>12. التواصل</h2>
-        <p>
+        <h2
+          data-ar="12. التواصل"
+          data-en="12. Contact"
+        >
+          12. التواصل
+        </h2>
+
+        <p
+          data-ar='للاستفسارات بشأن هذه الشروط، يمكنك التواصل مع المطور عبر صفحة التطبيق في متجر التطبيقات أو عبر <a href="https://adnandev.cloud" rel="noopener noreferrer">موقع المطور</a>.'
+          data-en='For questions regarding these Terms, you can contact the developer through the app&apos;s page on the app store or through the <a href="https://adnandev.cloud" rel="noopener noreferrer">developer&apos;s website</a>.'
+        >
           للاستفسارات بشأن هذه الشروط، يمكنك التواصل مع المطور عبر صفحة التطبيق
           في متجر التطبيقات أو عبر
-          <a href="https://adnandev.cloud" rel="noopener noreferrer"
-            >موقع المطور</a
-          >.
+          <a
+            href="https://adnandev.cloud"
+            rel="noopener noreferrer"
+          >
+            موقع المطور
+          </a>.
         </p>
       </section>
 
-      <footer>© 2026 تطبيق مواقيت الصلاة</footer>
+      <footer
+        data-ar="© 2026 تطبيق مواقيت الصلاة"
+        data-en="© 2026 Prayer Times App"
+      >
+        © 2026 تطبيق مواقيت الصلاة
+      </footer>
     </main>
+
+    <script>
+      const languageSelector =
+        document.getElementById("languageSelector");
+
+      function setLanguage(language) {
+        const isArabic = language === "ar";
+
+        document.documentElement.lang = language;
+        document.documentElement.dir = isArabic ? "rtl" : "ltr";
+
+        document.title = isArabic
+          ? "شروط الاستخدام | مواقيت الصلاة"
+          : "Terms of Use | Prayer Times";
+
+        document
+          .querySelectorAll("[data-ar][data-en]")
+          .forEach((element) => {
+            element.innerHTML = isArabic
+              ? element.dataset.ar
+              : element.dataset.en;
+          });
+
+        languageSelector.value = language;
+
+        localStorage.setItem(
+          "termsOfUseLanguage",
+          language
+        );
+      }
+
+      languageSelector.addEventListener(
+        "change",
+        (event) => {
+          setLanguage(event.target.value);
+        }
+      );
+
+      const savedLanguage =
+        localStorage.getItem("termsOfUseLanguage");
+
+      if (
+        savedLanguage === "ar" ||
+        savedLanguage === "en"
+      ) {
+        setLanguage(savedLanguage);
+      } else {
+        setLanguage("ar");
+      }
+    </script>
   </body>
 </html>
+```
